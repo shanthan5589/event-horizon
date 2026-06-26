@@ -20,15 +20,17 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## Project structure
 
-    fetch.py          scrape and clean articles from Quanta Magazine
+    get_page_urls.py  extract article links from a single search results page
+    collect_urls.py   collect all article URLs across paginated search results
+    fetch.py          scrape and clean article text from a URL
     chunker.py        split article text into overlapping token chunks
     embed.py          generate embeddings via OpenAI API
-    db.py             connect to Neon, insert chunks, search by similarity
-    ingest.py         run the full ingestion pipeline over all URLs
-    generate.py       build prompts and call GPT-4o-mini
+    db.py             store chunks and embeddings in PostgreSQL, search by similarity
+    ingest.py         run the full pipeline: fetch, chunk, embed, store
+    retrieve.py       rank stored chunks by cosine similarity to a query
+    generate.py       build prompts and call GPT-4o-mini with retrieved context
     api.py            FastAPI backend exposing a /query endpoint
     app.py            Streamlit chat interface
-    main.py           CLI for testing queries locally
 
 
 ## Corpus
