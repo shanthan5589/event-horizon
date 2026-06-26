@@ -60,4 +60,4 @@ streamlit run app.py
 
 ## Disclaimer
 
-This is a portfolio project. All content is sourced from Quanta Magazine under CC BY-NC-ND 4.0. Not intended as a substitute for scientific literature.
+This is a non-commercial educational portfolio project built to demonstrate RAG system design. Article content is sourced from Quanta Magazine for demonstration purposes only. All content remains the copyright of Quanta Magazine / Simons Foundation. Not intended as a substitute for scientific literature.
