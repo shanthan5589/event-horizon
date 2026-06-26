@@ -32,10 +32,12 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## Corpus
 
-- Source: Quanta Magazine (CC BY-NC-ND 4.0)
-- Articles: 286
+## Corpus
+
+- Source: Quanta Magazine (all rights reserved — © Simons Foundation)
+- Articles: 286 (scraped for educational/portfolio demonstration purposes only)
 - Chunks: 2,619
-- Topics: black hole physics, gravitational waves, information paradox, Hawking radiation, singularities, event horizons
+- Topics: black hole physics, gravitational waves, information paradox, Hawking radiation, singularities, event horizons, and related areas
 
 ## Setup
 
@@ -60,4 +62,16 @@ streamlit run app.py
 
 ## Disclaimer
 
-This is a portfolio project. All content is sourced from Quanta Magazine under CC BY-NC-ND 4.0. Not intended as a substitute for scientific literature.
+This is a **non-commercial educational portfolio project** created to demonstrate Retrieval-Augmented Generation (RAG) techniques.
+
+It is **not affiliated with, endorsed by, or sponsored by** Quanta Magazine or the Simons Foundation.
+
+All article content was obtained via scraping solely for personal learning and portfolio showcase purposes. The full articles remain the copyright of Quanta Magazine / Simons Foundation. This project makes fair-use-style excerpts/chunks with citations back to the originals. No commercial use is made of the material. It is not intended as a substitute for reading the original articles on quantamagazine.org or for scientific literature.
+
+Users are strongly encouraged to visit the source articles directly.
+
+## Ethical Note
+
+This project was built as a technical demonstration of RAG systems. In a production environment or for any public/commercial use, I would rely exclusively on openly licensed datasets (e.g., arXiv papers with permissive licenses) and seek explicit permission before using copyrighted material at scale.
+
+The project respects `robots.txt` where feasible and was rate-limited during data collection.
