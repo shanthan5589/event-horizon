@@ -30,7 +30,6 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
     app.py            Streamlit chat interface
     main.py           CLI for testing queries locally
 
-## Corpus
 
 ## Corpus
 
@@ -66,7 +65,7 @@ This is a **non-commercial educational portfolio project** created to demonstrat
 
 It is **not affiliated with, endorsed by, or sponsored by** Quanta Magazine or the Simons Foundation.
 
-All article content was obtained via scraping solely for personal learning and portfolio showcase purposes. The full articles remain the copyright of Quanta Magazine / Simons Foundation. This project makes fair-use-style excerpts/chunks with citations back to the originals. No commercial use is made of the material. It is not intended as a substitute for reading the original articles on quantamagazine.org or for scientific literature.
+All article content was obtained via scraping solely for personal learning and portfolio showcase purposes. The full articles remain the copyright of Quanta Magazine / Simons Foundation. This project uses limited excerpts/chunks with proper citations back to the originals. No commercial use is made of the material. It is not intended as a substitute for reading the original articles on quantamagazine.org or for scientific literature.
 
 Users are strongly encouraged to visit the source articles directly.
 
