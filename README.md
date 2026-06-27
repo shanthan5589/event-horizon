@@ -26,13 +26,9 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## Project structure
 
-    get_page_urls.py  extract article links from a single search results page
-    collect_urls.py   collect all article URLs across paginated search results
-    fetch.py          scrape and clean article text from a URL
     chunker.py        split article text into overlapping token chunks
     embed.py          generate embeddings via OpenAI API
     db.py             store chunks and embeddings in PostgreSQL, search by similarity
-    ingest.py         run the full pipeline: fetch, chunk, embed, store
     generate.py       build prompts and call GPT-4o-mini with retrieved context
     api.py            FastAPI backend exposing a /query endpoint
     app.py            Streamlit chat interface
