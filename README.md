@@ -60,6 +60,12 @@ Run locally:
 streamlit run app.py
 ```
 
+---
+title: Event Horizon
+sdk: docker
+pinned: false
+---
+
 ## Disclaimer
 
 This is a **non-commercial educational portfolio project** created to demonstrate Retrieval-Augmented Generation (RAG) techniques.
