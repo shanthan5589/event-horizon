@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 st.set_page_config(page_title="Black Hole RAG", page_icon="🕳️", layout="centered")
-st.title("🕳️ Black Hole Explorer")
+st.title("🌌 Event Horizon")
 st.caption("Ask anything about black holes, powered by Quanta Magazine articles")
 
 if "messages" not in st.session_state:

@@ -1,8 +1,10 @@
+<!--
 ---
 title: Event Horizon
 sdk: docker
 pinned: false
 ---
+-->
 
 # Event Horizon
 
