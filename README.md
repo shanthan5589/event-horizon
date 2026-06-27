@@ -27,7 +27,6 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
     embed.py          generate embeddings via OpenAI API
     db.py             store chunks and embeddings in PostgreSQL, search by similarity
     ingest.py         run the full pipeline: fetch, chunk, embed, store
-    retrieve.py       rank stored chunks by cosine similarity to a query
     generate.py       build prompts and call GPT-4o-mini with retrieved context
     api.py            FastAPI backend exposing a /query endpoint
     app.py            Streamlit chat interface
