@@ -21,8 +21,8 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## Text Chunking Parameters
 
- - **Chunk size**: 400 tokens
- - **Overlap**: 50 tokens
+ - Chunk size: 400 tokens
+ - Overlap: 50 tokens
 
 ## Project structure
 
@@ -35,10 +35,10 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## Corpus
 
-- **Quanta Magazine**: 286 articles (all rights reserved — © Simons Foundation — Used for demonstration only)
-- **Wikipedia**: 261 articles on black holes and related topics (CC BY-SA)
-- **Total Articles**: ~547
-- **Total Chunks**: ~4,078 (estimated)
+- **Quanta Magazine**: 281 articles (all rights reserved — © Simons Foundation — Used for demonstration only)
+- **Wikipedia**:       261 articles on black holes and related topics (CC BY-SA)
+- **Total Articles**:  542
+- **Total Chunks**:    4,078 (Quanta - 2,619 chunks, Wikipedia - 1,459 chunks)
 - **Topics**: Black holes, gravitational waves, singularities, Hawking radiation, event horizons, cosmology, etc.
 
 ## Setup
