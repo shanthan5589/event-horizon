@@ -1,3 +1,9 @@
+---
+title: Event Horizon
+sdk: docker
+pinned: false
+---
+
 # Event Horizon
 
 A retrieval-augmented generation (RAG) system for answering questions about black hole physics, grounded in articles from Quanta Magazine.
@@ -59,12 +65,6 @@ Run locally:
 ```bash
 streamlit run app.py
 ```
-
----
-title: Event Horizon
-sdk: docker
-pinned: false
----
 
 ## Disclaimer
 
