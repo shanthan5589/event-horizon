@@ -7,3 +7,4 @@ urls.txt
 commands.txt
 debug.py
 test_db.py
+retrieve.py
