@@ -1,13 +1,8 @@
 .env
 venv/
 __pycache__/
-urls.txt
 *.pyc
 
-commands.txt
-debug.py
-test_db.py
-retrieve.py
-quanta_magazine/
 Debugging/
-Wikipedia/
+Other Files/
+Web Scraping/

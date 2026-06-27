@@ -1,9 +1,3 @@
----
-title: Event Horizon
-sdk: docker
-pinned: false
----
-
 # Event Horizon
 
 A retrieval-augmented generation (RAG) system for answering questions about black hole physics, grounded in articles from Quanta Magazine.
@@ -18,11 +12,17 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## Stack
 
-- Embeddings: OpenAI text-embedding-3-small (1536 dimensions)
-- Vector database: PostgreSQL + pgvector on Neon
+- Embeddings: OpenAI `text-embedding-3-small` (1536 dimensions)
+- Tokenizer:  OpenAI `cl100k_base` (via `tiktoken`)
+- Vector database: PostgreSQL + pgvector (Neon)
 - Generation: GPT-4o-mini
 - Backend: FastAPI
 - Frontend: Streamlit
+
+## Text Chunking Parameters
+
+ - **Chunk size**: 400 tokens
+ - **Overlap**: 50 tokens
 
 ## Project structure
 
@@ -33,13 +33,13 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
     api.py            FastAPI backend exposing a /query endpoint
     app.py            Streamlit chat interface
 
-
 ## Corpus
 
-- Source: Quanta Magazine (all rights reserved — © Simons Foundation)
-- Articles: 286 (scraped for educational/portfolio demonstration purposes only)
-- Chunks: 2,619
-- Topics: black hole physics, gravitational waves, information paradox, Hawking radiation, singularities, event horizons, and related areas
+- **Quanta Magazine**: 286 articles (all rights reserved — © Simons Foundation — Used for demonstration only)
+- **Wikipedia**: 261 articles on black holes and related topics (CC BY-SA)
+- **Total Articles**: ~547
+- **Total Chunks**: ~4,078 (estimated)
+- **Topics**: Black holes, gravitational waves, singularities, Hawking radiation, event horizons, cosmology, etc.
 
 ## Setup
 
