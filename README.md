@@ -4,11 +4,11 @@ A retrieval-augmented generation (RAG) system for answering questions about blac
 
 ## How it works
 
-1. 286 articles from Quanta Magazine are scraped, chunked into 400-token pieces, and embedded using OpenAI's text-embedding-3-small model
-2. Embeddings are stored in a PostgreSQL database with the pgvector extension (Neon)
-3. When a question is asked, it is embedded and compared against all stored chunks using cosine similarity
-4. The top 3 most relevant chunks are retrieved and passed to GPT-4o-mini as context
-5. The model generates an answer grounded in the retrieved context, with citations to the source articles
+1. 542 articles from a curated science corpus are scraped, chunked into 400-token pieces, and embedded using OpenAI's text-embedding-3-small model.
+2. Embeddings are stored in a PostgreSQL database with the pgvector extension (Neon).
+3. When a question is asked, it is embedded and compared against all stored chunks using cosine similarity.
+4. The top 3 most relevant chunks are retrieved and passed to GPT-4o-mini as context.
+5. The model generates an answer grounded in the retrieved context, with citations to the source articles.
 
 ## Stack
 
