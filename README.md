@@ -1,6 +1,6 @@
 # Event Horizon
 
-A retrieval-augmented generation (RAG) system for answering questions about black hole physics, grounded in articles from Quanta Magazine.
+A retrieval-augmented generation (RAG) system for answering questions about black hole physics, grounded in a curated corpus of physics and astronomy articles.
 
 ## How it works
 
