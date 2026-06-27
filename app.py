@@ -29,7 +29,7 @@ if prompt := st.chat_input("Ask about black holes..."):
 
         st.markdown(answer)
 
-        if sources:
+        if sources and "I don't know" not in answer:
             st.markdown("**Sources:**")
             for key in sources:
                 s = sources[key]
