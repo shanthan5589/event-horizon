@@ -75,3 +75,11 @@ Users are strongly encouraged to visit the source articles directly.
 This project was built as a technical demonstration of RAG systems. In a production environment or for any public/commercial use, I would rely exclusively on openly licensed datasets (e.g., arXiv papers with permissive licenses) and seek explicit permission before using copyrighted material at scale.
 
 The project respects `robots.txt` where feasible and was rate-limited during data collection.
+
+## License
+
+The **code** (Python scripts, FastAPI backend, Streamlit UI, etc.) in this repository is open source and licensed under the MIT License.
+
+However, the **scraped article content**, text chunks, and embeddings from Quanta Magazine are **not** included under this license. They remain the copyright of Quanta Magazine / Simons Foundation and are used here only for educational/portfolio purposes.
+
+Redistributing the raw Quanta content or derived data is not permitted.
