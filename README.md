@@ -61,6 +61,30 @@ Run locally:
 ```bash
 streamlit run app.py
 ```
+```bash
+uvicorn api:app --reload
+```
+
+## Testing
+
+Beyond the quantitative retrieval metrics (Recall@k, MRR) and faithfulness
+scores, the system is probed against four categories of questions, each
+testing a distinct retrieval/generation behavior. A correctly tuned RAG
+handles all four: it answers when the corpus supports an answer, and refuses
+when it does not.
+
+| Category | Example | Expected behavior |
+|----------|---------|-------------------|
+| **In-corpus, direct** | "How far away is TON 618?" | Answer directly - the fact is stated explicitly in the retrieved context. |
+| **In-corpus, inferential** | "Is TON 618 visible to the naked eye?" | Answer by reasoning over the context. The corpus doesn't state this verbatim but provides enough (e.g. brightness, distance) to infer it, while being explicit about anything the context doesn't directly cover. |
+| **In-domain, absent** | "What is a solar mass?" | Refuse. The term appears throughout the corpus but is never *defined* there; answering would mean drawing on the model's own training, not the retrieved context. This is the strictest test of grounding. |
+| **Off-domain** | "What is the chemical composition of a banana?" | Refuse - nothing in a black-hole corpus is relevant. |
+
+The first two categories confirm the system *answers when it should*; the last
+two confirm it *refuses when it should*. The split between "in-domain, absent"
+and "off-domain" is deliberate: the former tests whether the model leaks
+training knowledge on a relevant-sounding question, the latter tests basic
+topical filtering.
 
 ## Disclaimer
 

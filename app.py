@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.set_page_config(page_title="Black Hole RAG", page_icon="🕳️", layout="centered")
+st.set_page_config(page_title="Event Horizon", page_icon="🌌", layout="centered")
 st.title("🌌 Event Horizon")
 st.caption("Ask anything about black holes, powered by Quanta Magazine articles")
 

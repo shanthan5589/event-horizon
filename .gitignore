@@ -6,3 +6,6 @@ __pycache__/
 Debugging/
 Other Files/
 Web Scraping/
+
+eval_batches/
+export_chunks.py
