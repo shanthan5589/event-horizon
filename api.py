@@ -44,18 +44,11 @@ def query(request: QueryRequest):
             )
         
         rephrased_question = response.choices[0].message.content.strip()
-        print(f"REPHRASED: {rephrased_question}")
-
+        
     query_embedding = embed_text(rephrased_question)
 
     # Retrieve chunks
     results = search_chunks(query_embedding, top_k=3)
-
-    for row in results:
-        print("--------------------------------------------------------------")
-        print(f"RETRIEVED: {row[0]} | chunk {row[2]} | score {row[4]:.3f}")
-        print(f"   {row[3]}")
-        print("----------------------------------------------------------------")
 
     top_chunks = []
     for row in results:
