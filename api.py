@@ -6,7 +6,10 @@ from db import search_chunks
 from embed import embed_text
 from generate import generate
 
+from openai import OpenAI
+
 app = FastAPI()
+client = OpenAI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,14 +21,42 @@ app.add_middleware(
 class QueryRequest(BaseModel):
     question: str
 
+history = []
+
 @app.post("/query")
 def query(request: QueryRequest):
     # Embed question
-    query_embedding = embed_text(request.question)
-    
+    if not history:
+        rephrased_question = request.question
+    else:
+        prompt = f"""You are rewriting a user's question so it can stand on its own for a search system.
+                    Using the conversation history, rewrite the user's latest question into a single, 
+                    self-contained question. Resolve any pronouns or references like "it", "that", "this thing" 
+                    into the specific subject from the history (e.g. the specific black hole being discussed).
+                    Return ONLY the rewritten question. No preamble, no explanation, no quotation marks.
+                    Context: {history} 
+                    Question: {request.question}"""
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0
+            )
+        
+        rephrased_question = response.choices[0].message.content.strip()
+        print(f"REPHRASED: {rephrased_question}")
+
+    query_embedding = embed_text(rephrased_question)
+
     # Retrieve chunks
     results = search_chunks(query_embedding, top_k=3)
-    
+
+    for row in results:
+        print("--------------------------------------------------------------")
+        print(f"RETRIEVED: {row[0]} | chunk {row[2]} | score {row[4]:.3f}")
+        print(f"   {row[3]}")
+        print("----------------------------------------------------------------")
+
     top_chunks = []
     for row in results:
         chunk = {
@@ -36,10 +67,13 @@ def query(request: QueryRequest):
             "similarity": row[4]
         }
         top_chunks.append((row[4], row[2], chunk))
-    
+
     # Generate answer
-    answer = generate(request.question, top_chunks)
-    
+    answer = generate(rephrased_question, top_chunks)
+
+    history.append({'role':"user",  "content":request.question})
+    history.append({ 'role':"assistant", 'content':answer})
+
     # Build sources
     sources = {}
     no_dup = set()

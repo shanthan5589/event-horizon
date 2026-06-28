@@ -12,9 +12,14 @@ def generate(input_query, top_chunks):
         
     context = "\n\n---\n\n".join(context)
     
-    prompt = f"""Answer the question using only the provided context. If the answer isn't in the context, say "I don't know based on the provided information."
-    Context: {context} 
-    Question: {input_query}"""
+    prompt = f"""You are answering questions using the provided context from astrophysics articles.
+                Use the context to answer the question. You may reason from and connect information in the 
+                context to address the question, even if it isn't stated word-for-word. If the context partially 
+                addresses the question, give what it does say and be clear about what it doesn't cover. Only 
+                say "I don't know based on the provided information." if the context contains nothing relevant 
+                to the question at all. Do not invent facts that aren't supported by the context.
+                Context: {context}
+                Question: {input_query}"""
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
