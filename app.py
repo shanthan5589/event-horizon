@@ -3,7 +3,7 @@ import requests
 
 st.set_page_config(page_title="Event Horizon", page_icon="🌌", layout="centered")
 st.title("🌌 Event Horizon")
-st.caption("Ask anything about black holes, powered by Quanta Magazine articles")
+st.caption("Ask anything about black holes, powered by curated corpus of physics and astronomy articles.")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
